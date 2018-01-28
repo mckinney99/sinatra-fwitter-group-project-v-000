@@ -1,0 +1,9 @@
+<h1>Edit photo <%=@photo.content%> </h1>
+
+<form action="/photos/<%=@photo.id%>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <input type="text" name="title" id="title" placeholder="title">
+  <input type="text" name="caption" id="caption" placeholder="caption">
+  <input type="text" name="image_url" id="image_url" placeholder="image_url">
+  <input type="submit" id="submit" value="Submit">
+</form>

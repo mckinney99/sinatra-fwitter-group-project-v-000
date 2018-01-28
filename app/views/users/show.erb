@@ -1,6 +1,6 @@
-<h1>Your Tweets</h1>
+<h1>Your Photos</h1>
 
-<%@user.tweets.all.each do |tweet|%>
-  <%=tweet.content%>
+<%@user.photos.all.each do |photo|%>
+  <%=photo.image_url%>
   <br></br>
-<%end%
+<%end%>

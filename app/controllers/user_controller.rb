@@ -1,9 +1,13 @@
+require "pry"
+
 class UserController < ApplicationController
 
   get "/signup" do
     if logged_in?
-      redirect "/tweets"
+      
+      redirect "/photos"
     else
+      
       erb :'users/create_user'
     end
   end
@@ -15,13 +19,13 @@ class UserController < ApplicationController
       @user = User.create(username: params[:username], email: params[:email], password: params[:password])
       @user.save
       session[:user_id] = @user.id
-      redirect to '/tweets'
+      redirect to '/photos'
     end
   end
 
   get "/login" do
     if logged_in?
-      redirect '/tweets'
+      redirect '/photos'
     else
       erb :'/users/login'
     end
@@ -31,7 +35,7 @@ class UserController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect to '/tweets'
+      redirect to '/photos'
     else
       redirect to '/login'
     end

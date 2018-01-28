@@ -1,0 +1,7 @@
+<h1>Welcome, <%= @user.username%>!</h1>
+
+<a href="/create_photo">New Photo</a>
+
+<%Photo.all.each do |photo|%>
+<%= photo.user.username%>: <%=photo.image_url%>
+<%end%>

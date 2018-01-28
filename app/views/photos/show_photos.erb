@@ -1,0 +1,10 @@
+<label><%= @photo.image_url %></label>
+
+<form method="get" action="/photos/<%=@photo.id%>/edit">
+  <input type="submit" name="edit_photo" value="Edit photo">
+</form>
+
+  <form method="post" action="/photos/<%=@photo.id%>/delete">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="delete_photo" value="Delete photo">
+</form>

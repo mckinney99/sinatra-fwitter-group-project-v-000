@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :tweets
+  has_many :photos
   has_secure_password
 
 

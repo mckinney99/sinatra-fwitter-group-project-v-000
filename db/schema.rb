@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104224537) do
+ActiveRecord::Schema.define(version: 20180128004254) do
+
+  create_table "photos", force: :cascade do |t|
+    t.string  "title"
+    t.string  "caption"
+    t.string  "image_url"
+    t.integer "user_id"
+  end
 
   create_table "tweets", force: :cascade do |t|
     t.string  "content"
